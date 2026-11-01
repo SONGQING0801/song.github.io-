@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f8fc">
+<meta name="description" content="YOUR NAME — Visual Designer portfolio">
+<title>YOUR NAME — Visual Designer</title>
+<style>
+:root{--bg:#f7f8fc;--ink:#171923;--muted:#7d8497;--line:rgba(255,255,255,.8);--glass:rgba(255,255,255,.56);--card:rgba(255,255,255,.7);--shadow:0 18px 60px rgba(70,82,122,.10);--accent:#8faeff;--dark:#242630}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;letter-spacing:-.025em;overflow-x:hidden;transition:background .35s,color .35s}
+body:before{content:"";position:fixed;inset:-15%;z-index:-2;background:radial-gradient(ellipse at 22% 18%,rgba(203,223,255,.7),transparent 32%),radial-gradient(ellipse at 72% 28%,rgba(250,221,230,.65),transparent 30%),radial-gradient(ellipse at 60% 82%,rgba(215,225,255,.65),transparent 35%),linear-gradient(135deg,#fafbff,#f4f6fb 60%,#fff);filter:blur(12px)}
+body.dark{--bg:#151720;--ink:#f4f5fb;--muted:#a3a9bc;--line:rgba(255,255,255,.14);--glass:rgba(38,41,54,.58);--card:rgba(38,41,54,.74);--shadow:0 18px 60px rgba(0,0,0,.22);--dark:#f4f5fb}
+body.dark:before{background:radial-gradient(ellipse at 22% 18%,rgba(59,86,145,.45),transparent 32%),radial-gradient(ellipse at 72% 28%,rgba(112,66,110,.28),transparent 30%),linear-gradient(135deg,#171923,#202332 60%,#171923)}
+a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;cursor:pointer;border:0}button:focus-visible,a:focus-visible{outline:3px solid #8eb6ff;outline-offset:4px}
+.wrap{width:min(1240px,calc(100% - 64px));margin:auto}.glass{background:var(--glass);border:1px solid var(--line);box-shadow:var(--shadow);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px)}
+.topbar{position:fixed;top:16px;left:50%;transform:translateX(-50%);width:min(1240px,calc(100% - 36px));height:62px;padding:0 20px;display:flex;align-items:center;justify-content:space-between;border-radius:22px;z-index:20}
+.brand{font-size:14px;letter-spacing:.23em;font-weight:650}.nav{display:flex;align-items:center;gap:6px}.nav a,.nav button{font-size:12px;color:var(--muted);padding:10px 13px;border-radius:14px;transition:.25s}.nav a:hover,.nav a.active{background:rgba(255,255,255,.62);color:var(--ink)}body.dark .nav a:hover,body.dark .nav a.active{background:rgba(255,255,255,.1)}
+.top-actions{display:flex;align-items:center;gap:10px}.icon-btn,.talk-btn{height:38px;padding:0 13px;border-radius:14px;background:rgba(255,255,255,.52);border:1px solid var(--line);transition:transform .2s,background .2s}.icon-btn:hover,.talk-btn:hover{transform:translateY(-2px)}.talk-btn{font-size:12px;padding:0 16px}
+.mobile-menu{display:none}
+.hero{min-height:730px;padding:158px 0 88px;display:grid;grid-template-columns:.9fr 1.1fr;align-items:center;gap:40px;position:relative}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;padding:9px 13px;border-radius:999px;font-size:12px;color:var(--muted);border:1px solid var(--line);background:var(--glass);backdrop-filter:blur(18px)}.dot{width:7px;height:7px;border-radius:50%;background:#56c9cf;box-shadow:0 0 0 4px rgba(86,201,207,.14)}
+h1{font-size:clamp(48px,6.6vw,88px);line-height:.99;letter-spacing:-.075em;font-weight:550;margin:28px 0 22px}h1 span{display:block;font-weight:420}.intro{max-width:420px;font-size:15px;line-height:1.8;color:var(--muted);margin:0 0 28px}.btn{display:inline-flex;align-items:center;gap:20px;padding:14px 19px;border-radius:999px;background:var(--ink);color:var(--bg);font-size:12px;transition:transform .25s,box-shadow .25s}.btn:hover{transform:translateY(-3px);box-shadow:0 12px 25px rgba(50,55,80,.2)}.btn .arrow{font-size:17px;transition:transform .25s}.btn:hover .arrow{transform:translateX(4px)}
+.hero-art{height:460px;position:relative;display:grid;place-items:center;isolation:isolate}.orb{width:min(390px,70%);aspect-ratio:1;border-radius:31% 69% 64% 36% / 40% 37% 63% 60%;background:linear-gradient(135deg,rgba(255,255,255,.95),rgba(198,224,255,.82) 32%,rgba(239,218,245,.76) 60%,rgba(255,225,210,.72));border:1px solid rgba(255,255,255,.9);box-shadow:inset 8px 8px 28px rgba(255,255,255,.9),inset -12px -15px 35px rgba(118,157,227,.22),0 35px 80px rgba(115,145,200,.18);transform:rotate(-13deg);animation:float 7s ease-in-out infinite;position:relative}.orb:before,.orb:after{content:"";position:absolute;inset:8%;border:1px solid rgba(255,255,255,.8);border-radius:inherit;transform:rotate(24deg);background:linear-gradient(145deg,rgba(255,255,255,.3),transparent 45%,rgba(255,255,255,.2))}.orb:after{inset:18%;transform:rotate(-35deg);filter:blur(1px)}.shine{position:absolute;width:130%;height:32%;top:31%;left:-15%;background:linear-gradient(180deg,transparent,rgba(255,255,255,.46),transparent);transform:rotate(-23deg);filter:blur(8px)}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-13deg)}50%{transform:translateY(-17px) rotate(-8deg)}}
+.floating-card{position:absolute;padding:17px 18px;border-radius:22px;display:flex;align-items:center;gap:13px;background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(24px);box-shadow:var(--shadow);animation:float 8s ease-in-out infinite}.floating-card small{display:block;color:var(--muted);font-size:11px;line-height:1.5}.floating-card strong{font-size:13px;font-weight:550;line-height:1.45}.mini-art{width:44px;height:44px;border-radius:13px;background:linear-gradient(135deg,#cce5ff,#e8d9ff 55%,#ffdccc);box-shadow:inset 3px 3px 9px #ffffffa8;flex-shrink:0}.card-note{left:2%;top:43%;transform:rotate(-7deg);max-width:220px}.stats{position:absolute;right:0;top:17%;padding:17px 20px;border-radius:22px;display:grid;gap:16px;min-width:100px}.stat strong{display:block;font-size:20px;font-weight:500}.stat span{font-size:11px;color:var(--muted)}
+.scroll-hint{position:absolute;bottom:30px;left:0;color:var(--muted);font-size:11px;display:flex;gap:9px;align-items:center}.scroll-hint span{display:inline-block;width:1px;height:34px;background:linear-gradient(var(--muted),transparent)}
+.section{padding:60px 0 92px;border-top:1px solid rgba(140,150,180,.12)}.section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:30px}.kicker{display:inline-block;padding:7px 11px;border-radius:999px;background:rgba(174,196,255,.22);font-size:11px;margin-bottom:13px}.section h2{font-size:clamp(32px,4vw,46px);letter-spacing:-.06em;font-weight:520;margin:0}.filters{display:flex;gap:5px;flex-wrap:wrap}.filter{padding:9px 13px;border-radius:999px;background:transparent;color:var(--muted);font-size:11px;transition:.2s}.filter:hover{background:var(--glass)}.filter.active{background:var(--ink);color:var(--bg)}
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.project{min-width:0;border-radius:23px;overflow:hidden;background:var(--card);border:1px solid var(--line);box-shadow:0 10px 35px rgba(70,82,122,.05);transition:transform .35s,box-shadow .35s;cursor:pointer;animation:appear .5s both}.project:hover{transform:translateY(-7px);box-shadow:var(--shadow)}.project[hidden]{display:none}@keyframes appear{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.project-visual{height:240px;position:relative;overflow:hidden;display:grid;place-items:center}.project-visual:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 25%,rgba(255,255,255,.65),transparent 60%)}.project-no{position:absolute;right:17px;top:15px;font-size:11px;color:rgba(40,45,60,.55)}.project-info{display:flex;justify-content:space-between;align-items:center;padding:17px 18px 19px}.project-info h3{font-size:17px;font-weight:550;margin:0 0 5px;letter-spacing:-.04em}.project-info p{font-size:11px;color:var(--muted);margin:0}.project-arrow{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.72);display:grid;place-items:center;color:#252735;transition:transform .25s}.project:hover .project-arrow{transform:rotate(-35deg)}
+.visual-lumo{background:linear-gradient(135deg,#eeece9,#f8f3ef 55%,#e8e6e5)}.bottle{height:155px;width:68px;border-radius:19px 19px 25px 25px;background:linear-gradient(90deg,#d6e5f4,#fff 24%,#f4f1ef 70%,#c4d5ef);box-shadow:15px 20px 30px #7886a22b;transform:rotate(16deg);position:relative}.bottle:before{content:"";position:absolute;top:-24px;left:14px;width:40px;height:29px;border-radius:7px 7px 3px 3px;background:linear-gradient(90deg,#d6d1ca,#fff,#d9d3cc)}.bottle:after{content:"Lumo";position:absolute;top:65px;left:13px;font-size:12px;color:#343c4d;transform:rotate(-16deg)}
+.visual-mindful{background:linear-gradient(135deg,#e9e3f2,#d9eafa 52%,#f8dfe7)}.phone{width:112px;height:195px;border:5px solid rgba(255,255,255,.9);border-radius:24px;background:linear-gradient(145deg,#fff,#f2efff);box-shadow:0 15px 35px #7379ad2b;padding:17px 10px;transform:rotate(-5deg);position:relative}.phone:before{content:"";position:absolute;width:35px;height:5px;border-radius:8px;background:#d9dce8;top:7px;left:34px}.phone .screen-title{font-size:10px;color:#72789b;margin-top:10px}.screen-block{height:32px;border-radius:8px;margin-top:10px;background:linear-gradient(100deg,#d7e5ff,#eee2ff)}.screen-block:nth-child(3){height:44px;background:linear-gradient(100deg,#e8e6ff,#d9efff)}
+.visual-serene{background:linear-gradient(135deg,#d9d9d8,#f3f0ed 55%,#dce8f2)}.window-art{width:76%;height:72%;border-radius:60% 8% 8% 8%;background:linear-gradient(140deg,#faf8f3 0 32%,#d6e1eb 33% 55%,#b4c7d7 56% 65%,#f5f2ed 66%);box-shadow:0 15px 35px #505b6c24;transform:rotate(-4deg);border:7px solid #faf8f5;position:relative}.window-art:after{content:"";position:absolute;inset:55% 0 0;background:linear-gradient(160deg,transparent,#9baebd)}
+.visual-kinetic{background:linear-gradient(135deg,#c9ddf5,#e9f2ff)}.poster{width:65%;height:70%;background:#f9fbff;box-shadow:12px 16px 30px #536d9c2c;transform:rotate(8deg);padding:22px;position:relative}.poster:before{content:"FORM / FUNCTION";font-size:10px;letter-spacing:.12em;position:absolute;top:22px;left:18px}.poster:after{content:"";position:absolute;left:22%;bottom:16%;width:70px;height:70px;border-radius:50%;background:linear-gradient(135deg,#2853b7,#b4d9ff);box-shadow:20px -8px 0 -5px #e8a9a9}
+.visual-bloom{background:linear-gradient(135deg,#dfe4c9,#f3f0dd)}.leaf{width:85px;height:175px;border-radius:100% 0 100% 0;background:linear-gradient(135deg,#a7b88b,#e7e9c8 45%,#62784d);transform:rotate(32deg);box-shadow:inset 10px 0 12px #fff8;position:relative}.leaf:after{content:"";position:absolute;width:1px;height:150px;background:#f9f5d5;left:45px;top:10px;transform:rotate(-9deg)}
+.visual-signal{background:linear-gradient(135deg,#dceaff,#dce0f7)}.device{width:115px;height:185px;border:5px solid #f9fbff;border-radius:24px;background:linear-gradient(155deg,#a7c8ee,#eff7ff 45%,#b2c4e4);transform:rotate(14deg);box-shadow:0 16px 30px #526fa533;position:relative}.device:after{content:"";position:absolute;top:15px;left:35px;width:35px;height:8px;border-radius:10px;background:#f8fbff}
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:start}.about-copy{font-size:17px;line-height:1.85;color:var(--muted);max-width:650px}.about-copy strong{color:var(--ink);font-weight:550}.skill-list{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px}.skill{font-size:12px;padding:10px 13px;border:1px solid var(--line);background:var(--glass);border-radius:999px}.about-panel{padding:25px;border-radius:25px}.about-panel h3{font-size:15px;font-weight:550;margin:0 0 18px}.timeline{display:grid;gap:17px}.timeline-row{display:flex;justify-content:space-between;gap:20px;font-size:12px}.timeline-row span{color:var(--muted)}
+.contact-panel{border-radius:30px;padding:clamp(28px,5vw,60px);display:flex;align-items:center;justify-content:space-between;gap:28px;position:relative;overflow:hidden}.contact-panel:after{content:"";position:absolute;width:260px;height:260px;right:20%;top:-170px;border-radius:50%;background:rgba(177,203,255,.28);filter:blur(15px);pointer-events:none}.contact-panel h2{font-size:clamp(35px,5vw,58px);line-height:1.05;max-width:650px;margin:0 0 15px}.contact-panel p{color:var(--muted);font-size:14px;margin:0}.footer{display:flex;justify-content:space-between;gap:20px;padding:28px 0 35px;color:var(--muted);font-size:11px}.socials{display:flex;gap:17px}.socials a:hover{color:var(--ink)}
+.modal{position:fixed;inset:0;z-index:50;background:rgba(18,22,34,.28);backdrop-filter:blur(14px);display:none;place-items:center;padding:20px}.modal.open{display:grid;animation:fade .2s}@keyframes fade{from{opacity:0}to{opacity:1}}.modal-card{width:min(620px,100%);padding:30px;border-radius:28px;background:var(--bg);border:1px solid var(--line);box-shadow:0 25px 90px #10152630;position:relative;animation:pop .28s}@keyframes pop{from{transform:translateY(12px) scale(.98)}to{transform:translateY(0) scale(1)}}.modal-close{position:absolute;right:18px;top:18px;width:34px;height:34px;border-radius:50%;background:var(--glass);font-size:20px}.modal-card .modal-art{height:150px;border-radius:18px;margin:18px 0;background:linear-gradient(135deg,#dceaff,#f2dfee);display:grid;place-items:center}.modal-card h3{font-size:30px;margin:0 0 7px;letter-spacing:-.05em}.modal-card p{color:var(--muted);line-height:1.7;font-size:14px}.toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,20px);padding:12px 18px;border-radius:999px;background:var(--ink);color:var(--bg);font-size:12px;opacity:0;pointer-events:none;transition:.3s;z-index:60}.toast.show{opacity:1;transform:translate(-50%,0)}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:900px){.wrap{width:min(100% - 40px,700px)}.topbar{width:calc(100% - 24px);top:12px}.nav{display:none;position:absolute;top:70px;left:0;right:0;padding:10px;border-radius:20px;background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(22px);box-shadow:var(--shadow);flex-direction:column;align-items:stretch}.nav.open{display:flex}.nav a{padding:13px}.mobile-menu{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:14px;background:var(--glass);border:1px solid var(--line)}.hero{grid-template-columns:1fr;padding-top:140px;gap:10px;min-height:unset}.hero-copy{position:relative;z-index:2}.hero-art{height:360px;margin-top:-5px}.orb{width:290px}.stats{right:2%;top:5%}.card-note{left:0;top:48%}.scroll-hint{display:none}.projects{grid-template-columns:repeat(2,1fr)}.project-visual{height:220px}.about-grid{grid-template-columns:1fr;gap:28px}}
+@media(max-width:560px){.wrap{width:calc(100% - 32px)}.topbar{height:56px;padding:0 13px;border-radius:19px}.brand{font-size:12px}.talk-btn{display:none}.hero{padding-top:120px}.hero h1{font-size:clamp(48px,14vw,68px)}.intro{font-size:14px}.hero-art{height:300px}.orb{width:235px}.stats{min-width:84px;padding:12px;gap:11px;right:0;top:3%}.stat strong{font-size:17px}.card-note{max-width:185px;padding:12px;left:-3%;top:50%}.mini-art{width:35px;height:35px}.floating-card strong{font-size:11px}.section{padding:48px 0 64px}.section-head{align-items:start;flex-direction:column}.section h2{font-size:35px}.filters{gap:3px}.filter{padding:8px 10px}.projects{grid-template-columns:1fr;gap:14px}.project-visual{height:250px}.about-copy{font-size:15px}.contact-panel{align-items:flex-start;flex-direction:column}.footer{flex-direction:column}.modal-card{padding:24px}.modal-card h3{font-size:26px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<header class="topbar glass">
+  <a class="brand" href="#home" aria-label="YOUR NAME 首页">YOUR NAME</a>
+  <nav class="nav" id="nav" aria-label="主导航">
+    <a class="active" href="#home">Home</a><a href="#projects">Projects</a><a href="#about">About</a><a href="#contact">Contact</a>
+  </nav>
+  <div class="top-actions">
+    <button class="icon-btn" id="themeToggle" aria-label="切换深浅色主题" title="切换主题">☼</button>
+    <a class="talk-btn" href="#contact">Let’s Talk&nbsp; ↗</a>
+    <button class="mobile-menu" id="menuToggle" aria-label="打开导航" aria-expanded="false">☰</button>
+  </div>
+</header>
+<main>
+<section class="hero wrap" id="home">
+  <div class="hero-copy reveal">
+    <div class="eyebrow"><span class="dot"></span> Visual Designer · Available for projects</div>
+    <h1>Hello, I’m <span>YOUR NAME</span></h1>
+    <p class="intro">A visual designer who turns ideas into meaningful visual experiences. I focus on clean aesthetics, thoughtful details, and design that makes a difference.</p>
+    <a class="btn" href="#projects">View My Work <span class="arrow">→</span></a>
+  </div>
+  <div class="hero-art reveal" aria-label="抽象玻璃质感艺术装置">
+    <div class="orb"><div class="shine"></div></div>
+    <div class="floating-card card-note"><div class="mini-art"></div><div><strong>Design<br>for a better tomorrow</strong><small>Ideas into experiences ↗</small></div></div>
+    <div class="stats glass">
+      <div class="stat"><strong>12+</strong><span>Projects</span></div>
+      <div class="stat"><strong>3+</strong><span>Years</span></div>
+      <div class="stat"><strong>∞</strong><span>Curiosity</span></div>
+    </div>
+  </div>
+  <div class="scroll-hint"><span></span> Scroll to explore</div>
+</section>
+
+<section class="section" id="projects">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div><span class="kicker">Selected Works · 2022—2026</span><h2>Featured Projects</h2></div>
+      <div class="filters" role="group" aria-label="项目分类筛选">
+        <button class="filter active" data-filter="all">All</button><button class="filter" data-filter="branding">Branding</button><button class="filter" data-filter="uiux">UI/UX</button><button class="filter" data-filter="visual">Visual</button><button class="filter" data-filter="illustration">Illustration</button>
+      </div>
+    </div>
+    <div class="projects">
+      <article class="project reveal" tabindex="0" role="button" data-category="branding visual" data-project="lumo" aria-label="查看 Lumo 项目详情">
+        <div class="project-visual visual-lumo"><span class="project-no">01</span><div class="bottle"></div></div>
+        <div class="project-info"><div><h3>Lumo</h3><p>Brand Identity · Packaging</p></div><span class="project-arrow">↗</span></div>
+      </article>
+      <article class="project reveal" tabindex="0" role="button" data-category="uiux visual" data-project="mindful" aria-label="查看 Mindful 项目详情">
+        <div class="project-visual visual-mindful"><span class="project-no">02</span><div class="phone"><div class="screen-title">Good morning</div><div class="screen-block"></div><div class="screen-block"></div><div class="screen-block"></div></div></div>
+        <div class="project-info"><div><h3>Mindful</h3><p>Mobile App · UI/UX</p></div><span class="project-arrow">↗</span></div>
+      </article>
+      <article class="project reveal" tabindex="0" role="button" data-category="branding visual" data-project="serene" aria-label="查看 Serene 项目详情">
+        <div class="project-visual visual-serene"><span class="project-no">03</span><div class="window-art"></div></div>
+        <div class="project-info"><div><h3>Serene</h3><p>Art Direction · Visual Identity</p></div><span class="project-arrow">↗</span></div>
+      </article>
+      <article class="project reveal" tabindex="0" role="button" data-category="visual illustration" data-project="kinetic" aria-label="查看 Kinetic 项目详情">
+        <div class="project-visual visual-kinetic"><span class="project-no">04</span><div class="poster"></div></div>
+        <div class="project-info"><div><h3>Kinetic</h3><p>Campaign · Graphic Design</p></div><span class="project-arrow">↗</span></div>
+      </article>
+      <article class="project reveal" tabindex="0" role="button" data-category="branding illustration" data-project="bloom" aria-label="查看 Bloom 项目详情">
+        <div class="project-visual visual-bloom"><span class="project-no">05</span><div class="leaf"></div></div>
+        <div class="project-info"><div><h3>Bloom</h3><p>Packaging · Illustration</p></div><span class="project-arrow">↗</span></div>
+      </article>
+      <article class="project reveal" tabindex="0" role="button" data-category="uiux visual" data-project="signal" aria-label="查看 Signal 项目详情">
+        <div class="project-visual visual-signal"><span class="project-no">06</span><div class="device"></div></div>
+        <div class="project-info"><div><h3>Signal</h3><p>Digital Product · UI/UX</p></div><span class="project-arrow">↗</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="section-head reveal"><div><span class="kicker">A little about me</span><h2>Design with intention.</h2></div></div>
+    <div class="about-grid">
+      <div class="reveal"><p class="about-copy">I’m <strong>YOUR NAME</strong>, a visual designer interested in the space where <strong>clarity meets emotion</strong>. I bring strategy, visual storytelling, and careful craft together to create identities and digital experiences that feel simple, distinctive, and human.</p><p class="about-copy">My process is curious and collaborative: ask better questions, explore unexpected directions, then refine every detail until it feels right.</p>
+        <div class="skill-list"><span class="skill">Brand Identity</span><span class="skill">Art Direction</span><span class="skill">Digital Design</span><span class="skill">Typography</span><span class="skill">Illustration</span><span class="skill">Prototyping</span></div>
+      </div>
+      <div class="about-panel glass reveal"><h3>Experience & Focus</h3><div class="timeline">
+        <div class="timeline-row"><strong>Independent Designer</strong><span>2023 — Now</span></div>
+        <div class="timeline-row"><strong>Visual Design</strong><span>2021 — 2023</span></div>
+        <div class="timeline-row"><strong>Based anywhere</strong><span>Remote friendly</span></div>
+        <div class="timeline-row"><strong>Currently exploring</strong><span>Motion & 3D</span></div>
+      </div></div>
+    </div>
+  </div>
+</section>
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="contact-panel glass reveal">
+      <div><span class="kicker">Have a good idea?</span><h2>Let’s make something<br>meaningful together.</h2><p>Open to select freelance projects and creative collaborations.</p></div>
+      <button class="btn" id="emailBtn">Get in touch <span class="arrow">↗</span></button>
+    </div>
+    <footer class="footer"><span>© <span id="year"></span> YOUR NAME. Crafted with intention.</span><div class="socials"><a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram ↗</a><a href="https://www.behance.net/" target="_blank" rel="noreferrer">Behance ↗</a><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn ↗</a></div></footer>
+  </div>
+</section>
+</main>
+<div class="modal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-card"><button class="modal-close" id="modalClose" aria-label="关闭详情">×</button><span class="kicker" id="modalType">Selected Project</span><h3 id="modalTitle">Project title</h3><div class="modal-art" id="modalArt"></div><p id="modalDescription"></p><p><strong>Role:</strong> <span id="modalRole"></span> &nbsp;·&nbsp; <strong>Year:</strong> <span id="modalYear"></span></p><button class="btn" id="modalDone">Back to projects <span class="arrow">↗</span></button></div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+const $=(s,root=document)=>root.querySelector(s), $$=(s,root=document)=>[...root.querySelectorAll(s)];
+const projectData={
+ lumo:{title:"Lumo",type:"Brand Identity · Packaging",desc:"A calm, modern identity for a personal-care concept. Soft gradients, tactile packaging and a restrained typographic system create a feeling of everyday clarity.",role:"Brand strategy, identity, packaging",year:"2025",className:"visual-lumo"},
+ mindful:{title:"Mindful",type:"Mobile App · UI/UX",desc:"A gentle wellness companion designed to make small daily rituals feel achievable. The interface uses quiet color, clear hierarchy and reassuring micro-interactions.",role:"Product design, UI system, prototyping",year:"2025",className:"visual-mindful"},
+ serene:{title:"Serene",type:"Art Direction · Visual Identity",desc:"A visual world inspired by architectural calm and natural light, built around spacious compositions and a muted, material-led palette.",role:"Art direction, visual identity",year:"2024",className:"visual-serene"},
+ kinetic:{title:"Kinetic",type:"Campaign · Graphic Design",desc:"A graphic campaign exploring movement through bold composition, modular typography and a flexible poster system.",role:"Campaign concept, graphic design",year:"2024",className:"visual-kinetic"},
+ bloom:{title:"Bloom",type:"Packaging · Illustration",desc:"A botanical packaging concept that balances organic forms with a contemporary product language and a playful illustration style.",role:"Illustration, packaging design",year:"2023",className:"visual-bloom"},
+ signal:{title:"Signal",type:"Digital Product · UI/UX",desc:"A focused digital product concept with a clear interface, accessible contrast and a visual system designed to scale across devices.",role:"UX flows, UI design, prototyping",year:"2023",className:"visual-signal"}
+};
+$$('.filter').forEach(btn=>btn.addEventListener('click',()=>{
+  $$('.filter').forEach(b=>b.classList.toggle('active',b===btn));
+  const filter=btn.dataset.filter;
+  $$('.project').forEach((card,i)=>{const show=filter==='all'||card.dataset.category.split(' ').includes(filter);card.hidden=!show;if(show){card.style.animation='none';void card.offsetWidth;card.style.animation=`appear .42s ${i*35}ms both`;}});
+}));
+const modal=$('#projectModal');
+function openProject(card){const d=projectData[card.dataset.project];if(!d)return;$('#modalTitle').textContent=d.title;$('#modalType').textContent=d.type;$('#modalDescription').textContent=d.desc;$('#modalRole').textContent=d.role;$('#modalYear').textContent=d.year;$('#modalArt').className='modal-art '+d.className;modal.classList.add('open');document.body.style.overflow='hidden';$('#modalClose').focus();}
+function closeProject(){modal.classList.remove('open');document.body.style.overflow='';}
+$$('.project').forEach(card=>{card.addEventListener('click',()=>openProject(card));card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openProject(card)}})});
+$('#modalClose').addEventListener('click',closeProject);$('#modalDone').addEventListener('click',closeProject);modal.addEventListener('click',e=>{if(e.target===modal)closeProject()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeProject()});
+$('#themeToggle').addEventListener('click',()=>{document.body.classList.toggle('dark');const dark=document.body.classList.contains('dark');$('#themeToggle').textContent=dark?'☾':'☼';$('#themeToggle').setAttribute('aria-label',dark?'切换浅色主题':'切换深色主题')});
+$('#menuToggle').addEventListener('click',()=>{const open=$('#nav').classList.toggle('open');$('#menuToggle').setAttribute('aria-expanded',String(open));$('#menuToggle').textContent=open?'×':'☰'});
+$$('#nav a').forEach(a=>a.addEventListener('click',()=>{$('#nav').classList.remove('open');$('#menuToggle').setAttribute('aria-expanded','false');$('#menuToggle').textContent='☰';$$('#nav a').forEach(n=>n.classList.toggle('active',n===a))}));
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});
+$$('.reveal').forEach(el=>observer.observe(el));
+const toast=(message)=>{const t=$('#toast');t.textContent=message;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2600)};
+$('#emailBtn').addEventListener('click',()=>{const email='hello@example.com';navigator.clipboard?.writeText(email).then(()=>toast('示例邮箱已复制：'+email)).catch(()=>{});window.location.href='mailto:'+email});
+$('#year').textContent=new Date().getFullYear();
+const sections=$$('main section[id]');const navObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){$$('#nav a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-35% 0px -55% 0px'});sections.forEach(s=>navObserver.observe(s));
+</script>
+</body>
+</html>
